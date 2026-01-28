@@ -57,25 +57,25 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <span className="text-muted-foreground">
-                  г. Москва, ул. Промышленная, д. 15
+                  Московская область, г. Балашиха<br />мкр Кучино, ул. Южная 17/1
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <a
-                  href="tel:+74951234567"
+                  href="tel:89017449440"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  +7 (495) 123-45-67
+                  8 (901) 744-94-40
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <a
-                  href="mailto:info@ibis-metal.ru"
+                  href="mailto:obrabotka-met@bk.ru"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  info@ibis-metal.ru
+                  obrabotka-met@bk.ru
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">

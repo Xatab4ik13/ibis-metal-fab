@@ -56,20 +56,20 @@ export default function Contacts() {
     {
       icon: MapPin,
       label: "Адрес",
-      value: "г. Москва, ул. Промышленная, д. 15",
+      value: "Московская область, г. Балашиха, мкр Кучино, ул. Южная 17/1",
       href: null,
     },
     {
       icon: Phone,
       label: "Телефон",
-      value: "+7 (495) 123-45-67",
-      href: "tel:+74951234567",
+      value: "8 (901) 744-94-40",
+      href: "tel:89017449440",
     },
     {
       icon: Mail,
       label: "Email",
-      value: "info@ibis-metal.ru",
-      href: "mailto:info@ibis-metal.ru",
+      value: "obrabotka-met@bk.ru",
+      href: "mailto:obrabotka-met@bk.ru",
     },
     {
       icon: Clock,
@@ -332,11 +332,11 @@ export default function Contacts() {
                   Нужна срочная консультация? Позвоните нам напрямую.
                 </p>
                 <a
-                  href="tel:+74951234567"
+                  href="tel:89017449440"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  +7 (495) 123-45-67
+                  8 (901) 744-94-40
                 </a>
               </div>
             </motion.div>

@@ -259,13 +259,7 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Все услуги
-            </Link>
+            {/* Breadcrumb removed */}
             
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-primary" />
