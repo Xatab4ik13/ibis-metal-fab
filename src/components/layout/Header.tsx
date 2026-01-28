@@ -43,7 +43,7 @@ export default function Header() {
               <img 
                 src={logoIbis} 
                 alt="ООО ИБИС" 
-                className="h-14 md:h-16 w-auto scale-[3] origin-left"
+                className="h-14 md:h-16 w-auto scale-[3.3] origin-left"
               />
             </Link>
 
