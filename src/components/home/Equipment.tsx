@@ -84,7 +84,7 @@ export default function Equipment() {
             transition={{ delay: index * 0.1 }}
             className="group flex-shrink-0 w-[350px] md:w-[450px]"
           >
-            <div className="relative aspect-[4/3] overflow-hidden mb-6">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-6">
               <img
                 src={item.image}
                 alt={item.name}
@@ -92,9 +92,11 @@ export default function Equipment() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
               
-              {/* Decorative corner */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-primary/50" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-primary/50" />
+              {/* Decorative corners */}
+              <div className="absolute bottom-4 right-4 w-12 h-12">
+                <div className="absolute bottom-0 right-0 w-full h-0.5 bg-primary" />
+                <div className="absolute bottom-0 right-0 h-full w-0.5 bg-primary" />
+              </div>
             </div>
             
             <div>
