@@ -34,19 +34,19 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Logo - абсолютно позиционирован в левом верхнем углу */}
+      <Link to="/" className="absolute top-0 left-0 z-50">
+        <img 
+          src={logoIbis} 
+          alt="ООО ИБИС" 
+          className="h-28 md:h-32 w-auto"
+        />
+      </Link>
+
       {/* Top bar - white with contact info */}
       <div className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center -ml-6 relative z-50">
-              <img 
-                src={logoIbis} 
-                alt="ООО ИБИС" 
-                className="h-12 md:h-16 w-auto scale-[2.8] origin-top-left translate-y-4"
-              />
-            </Link>
-
+          <div className="flex items-center justify-end h-16 md:h-20">
             {/* Right side - phone & CTA */}
             <div className="hidden md:flex items-center gap-6">
               <a
