@@ -413,10 +413,10 @@ export default function ServiceDetail() {
                 >
                   <h3 className="font-semibold mb-4">Быстрая связь</h3>
                   <a 
-                    href="tel:+74951234567" 
+                    href="tel:89017449440" 
                     className="block text-xl font-semibold text-primary hover:underline mb-2"
                   >
-                    +7 (495) 123-45-67
+                    8 (901) 744-94-40
                   </a>
                   <p className="text-sm text-muted-foreground">
                     Пн-Пт: 9:00 - 18:00
