@@ -242,7 +242,7 @@ export default function ServiceDetail() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative pt-48 pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={service.images[0]}
