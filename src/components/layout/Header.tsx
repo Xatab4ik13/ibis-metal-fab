@@ -39,11 +39,11 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center -ml-4">
+            <Link to="/" className="flex items-center -ml-6 relative z-50">
               <img 
                 src={logoIbis} 
                 alt="ООО ИБИС" 
-                className="h-12 md:h-16 w-auto scale-[2.2] origin-left"
+                className="h-12 md:h-16 w-auto scale-[2.8] origin-top-left translate-y-4"
               />
             </Link>
 
