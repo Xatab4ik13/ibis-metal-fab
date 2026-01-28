@@ -81,7 +81,7 @@ export default function Header() {
       {/* Navigation bar - dark */}
       <nav className="hidden md:block bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="flex items-center gap-1 h-14">
+          <div className="flex items-center justify-center gap-8 h-14">
             {navItems.map((item) => (
               <div
                 key={item.path}
@@ -91,10 +91,10 @@ export default function Header() {
               >
                 <Link
                   to={item.path}
-                  className={`flex items-center gap-1 px-5 py-4 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 px-4 py-4 text-sm font-bold uppercase tracking-wide transition-colors ${
                     isActive(item.path)
                       ? "text-primary"
-                      : "text-foreground/80 hover:text-primary"
+                      : "text-foreground hover:text-primary"
                   }`}
                 >
                   {item.label}
