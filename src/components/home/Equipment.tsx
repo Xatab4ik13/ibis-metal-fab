@@ -1,8 +1,7 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
-import trumatic2000 from "@/assets/equipment/trumatic-2000.jpg";
-import cncPlasma from "@/assets/equipment/cnc-plasma.jpg";
+import trumatic2000 from "@/assets/equipment/trumatic-2000r-full.jpg";
+import cncPlasma from "@/assets/equipment/ajan-cnc-cutting.jpg";
 import bodorLaser from "@/assets/equipment/bodor-laser.jpg";
 
 const equipment = [
@@ -33,25 +32,14 @@ const equipment = [
 ];
 
 export default function Equipment() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
-
   return (
-    <section ref={containerRef} className="py-32 relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
-      
-      <div className="container mx-auto px-4 relative z-10 mb-16">
+    <section className="py-24 md:py-32 bg-card/30">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-2xl"
+          className="max-w-2xl mb-16"
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-12 bg-primary" />
@@ -68,47 +56,44 @@ export default function Equipment() {
             что гарантирует высокое качество изделий.
           </p>
         </motion.div>
-      </div>
 
-      {/* Horizontal scroll gallery */}
-      <motion.div 
-        style={{ x }}
-        className="flex gap-6 pl-4 md:pl-[calc((100vw-1280px)/2+1rem)]"
-      >
-        {equipment.map((item, index) => (
-          <motion.div
-            key={item.name}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="group flex-shrink-0 w-[350px] md:w-[450px]"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-6">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              
-              {/* Decorative corners */}
-              <div className="absolute bottom-4 right-4 w-12 h-12">
-                <div className="absolute bottom-0 right-0 w-full h-0.5 bg-primary" />
-                <div className="absolute bottom-0 right-0 h-full w-0.5 bg-primary" />
+        {/* Equipment grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {equipment.map((item, index) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                
+                {/* Decorative corner */}
+                <div className="absolute bottom-3 right-3 w-8 h-8">
+                  <div className="absolute bottom-0 right-0 w-full h-0.5 bg-primary" />
+                  <div className="absolute bottom-0 right-0 h-full w-0.5 bg-primary" />
+                </div>
               </div>
-            </div>
-            
-            <div>
-              <span className="text-xs text-primary font-medium tracking-wider uppercase">
-                {item.type}
-              </span>
-              <h3 className="text-xl font-semibold mt-2 mb-1">{item.name}</h3>
-              <p className="text-sm text-muted-foreground">{item.specs}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+              
+              <div>
+                <span className="text-xs text-primary font-medium tracking-wider uppercase">
+                  {item.type}
+                </span>
+                <h3 className="text-lg font-semibold mt-1 mb-1">{item.name}</h3>
+                <p className="text-sm text-muted-foreground">{item.specs}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
