@@ -88,15 +88,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Map placeholder */}
+          {/* Map */}
           <div>
             <h3 className="font-semibold text-foreground mb-6">На карте</h3>
             <div className="aspect-square rounded-lg bg-muted industrial-border overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.2!2d37.6173!3d55.7558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIxLjAiTiAzN8KwMzcnMDIuMyJF!5e0!3m2!1sru!2sru!4v1"
-                className="w-full h-full grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                src="https://yandex.ru/map-widget/v1/?pt=37.976944,55.761944&z=16&l=map"
+                className="w-full h-full"
                 loading="lazy"
-                title="Карта"
+                title="Карта - ООО ИБИС"
+                allowFullScreen
               />
             </div>
           </div>
