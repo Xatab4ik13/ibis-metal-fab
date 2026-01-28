@@ -80,10 +80,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
         {/* Gradient Overlay */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          className="absolute inset-0"
           animate={{ 
             background: isHovered 
-              ? "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%)"
+              ? "linear-gradient(to top, hsl(24 100% 50% / 0.9) 0%, hsl(24 100% 50% / 0.3) 40%, transparent 100%)"
               : "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)"
           }}
           transition={{ duration: 0.4 }}
