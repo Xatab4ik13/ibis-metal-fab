@@ -35,11 +35,11 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Logo - абсолютно позиционирован в левом верхнем углу */}
-      <Link to="/" className="absolute top-0 left-0 z-50">
+      <Link to="/" className="absolute top-2 left-4 md:left-8 z-50">
         <img 
           src={logoIbis} 
           alt="ООО ИБИС" 
-          className="h-28 md:h-32 w-auto"
+          className="h-24 md:h-28 lg:h-32 w-auto"
         />
       </Link>
 
