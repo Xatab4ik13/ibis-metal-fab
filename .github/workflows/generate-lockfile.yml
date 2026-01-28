@@ -1,0 +1,31 @@
+name: Generate package-lock.json
+
+on:
+  workflow_dispatch: # Ручной запуск
+
+jobs:
+  generate-lock:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Remove old lock files
+        run: rm -f package-lock.json bun.lockb
+        
+      - name: Generate package-lock.json
+        run: npm install
+        
+      - name: Commit and push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add package-lock.json
+          git diff --staged --quiet || git commit -m "chore: regenerate package-lock.json"
+          git push
