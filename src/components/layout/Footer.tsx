@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import logoIbis from "@/assets/logo-ibis.png";
 
 const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
@@ -16,11 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center font-bold text-primary-foreground text-lg">
-                И
-              </div>
-              <span className="font-bold text-lg text-foreground">ООО ИБИС</span>
+            <div className="mb-6">
+              <img 
+                src={logoIbis} 
+                alt="ООО ИБИС" 
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Профессиональная металлообработка на высокоточном оборудовании Trumpf. 
