@@ -55,11 +55,11 @@ export default function Header() {
             {/* Right side - phone & CTA */}
             <div className="hidden md:flex items-center gap-6">
               <a
-                href="tel:+74951234567"
+                href="tel:89017449440"
                 className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors font-medium"
               >
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-lg">+7 (495) 123-45-67</span>
+                <span className="text-lg">8 (901) 744-94-40</span>
               </a>
               <Button asChild className="bg-primary hover:bg-primary/90 text-white font-medium px-6 h-11">
                 <Link to="/contacts">Оставить заявку</Link>
@@ -200,11 +200,11 @@ export default function Header() {
               
               <div className="pt-4 mt-2 border-t border-border">
                 <a
-                  href="tel:+74951234567"
+                  href="tel:89017449440"
                   className="flex items-center gap-2 text-foreground mb-4"
                 >
                   <Phone className="w-5 h-5 text-primary" />
-                  +7 (495) 123-45-67
+                  8 (901) 744-94-40
                 </a>
                 <Button asChild className="w-full bg-primary hover:bg-primary/90">
                   <Link to="/contacts" onClick={() => setIsMenuOpen(false)}>

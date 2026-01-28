@@ -47,7 +47,7 @@ export default function CTA() {
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               Готовы обсудить<br />
-              <span className="text-gradient">ваш проект?</span>
+              <span className="text-primary">ваш проект?</span>
             </h2>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -66,10 +66,10 @@ export default function CTA() {
               <div className="flex items-center gap-4 text-muted-foreground">
                 <span className="text-sm">или позвоните:</span>
                 <a 
-                  href="tel:+74951234567" 
+                  href="tel:89017449440" 
                   className="text-xl font-semibold text-foreground hover:text-primary transition-colors"
                 >
-                  +7 (495) 123-45-67
+                  8 (901) 744-94-40
                 </a>
               </div>
             </div>
