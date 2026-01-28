@@ -3,6 +3,9 @@ name: Generate package-lock.json
 on:
   workflow_dispatch: # Ручной запуск
 
+permissions:
+  contents: write
+
 jobs:
   generate-lock:
     runs-on: ubuntu-latest
@@ -10,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
