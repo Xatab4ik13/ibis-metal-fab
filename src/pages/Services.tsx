@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
-import trumatic200 from "@/assets/equipment/trumatic-200.jpg";
-import cncMilling from "@/assets/equipment/cnc-milling.jpg";
-import plasmaCutter from "@/assets/equipment/plasma-cutter.jpg";
-import redBoxes from "@/assets/products/red-boxes.jpg";
+import trumatic from "@/assets/equipment/trumatic-2000r-full.jpg";
+import cncMilling from "@/assets/equipment/cnc-milling-5axis.jpg";
+import ajanPlasma from "@/assets/equipment/ajan-cnc-cutting.jpg";
+import perforatedBox from "@/assets/products/perforated-box.jpg";
 import cabinetFrame from "@/assets/products/cabinet-frame.jpg";
 
 const services = [
@@ -23,7 +24,7 @@ const services = [
     title: "Раскрой листового металла",
     shortDesc: "Координатная пробивка Trumatic 2000R",
     description: "Наше производство оснащено современными высокоточными станками с ЧПУ. Предлагаем услуги по координатной пробивке металла различной степени сложности на высокотехнологичном станке Trumatic 2000R немецкой компании Trumpf.",
-    image: trumatic200,
+    image: trumatic,
     features: ["Сталь 0.5-3.0 мм", "Алюминий до 4.0 мм", "ЧПУ управление"],
   },
   {
@@ -39,7 +40,7 @@ const services = [
     title: "Газо-плазменная резка",
     shortDesc: "Рабочая поверхность 2000×6000 мм",
     description: "Станок плазменной и газокислородной резки. Оборудование предназначено для резки плазменной дугой различных металлов толщиной от 1 до 50 мм, газом до 200мм. Высокоточное ЧПУ позволяет изготавливать детали любой конфигурации.",
-    image: plasmaCutter,
+    image: ajanPlasma,
     features: ["Плазма: 1-50 мм", "Газ: до 200 мм", "Любая конфигурация"],
   },
   {
@@ -47,7 +48,7 @@ const services = [
     title: "Сварка",
     shortDesc: "Все виды сварочных работ",
     description: "Сварка — технологический процесс получения неразъёмного соединения. На нашем производстве имеется несколько видов сварки: ручная дуговая, полуавтоматическая проволокой, точечная контактная и сварка аргоном для нержавеющей стали, алюминия и титана.",
-    image: redBoxes,
+    image: perforatedBox,
     features: ["Ручная дуговая", "Полуавтоматическая", "Аргонодуговая TIG"],
   },
   {
@@ -64,7 +65,7 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="pt-32 md:pt-40 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -79,7 +80,7 @@ export default function Services() {
                 Наши услуги
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Полный цикл<br />
               <span className="text-muted-foreground">металлообработки</span>
             </h1>
@@ -92,7 +93,7 @@ export default function Services() {
       </section>
 
       {/* Services List */}
-      <section className="pb-32">
+      <section className="pb-24">
         <div className="container mx-auto px-4">
           <div className="space-y-1">
             {services.map((service, index) => (
@@ -117,7 +118,7 @@ export default function Services() {
                     
                     {/* Image */}
                     <div className="lg:col-span-3">
-                      <div className="aspect-[4/3] overflow-hidden">
+                      <div className="aspect-[4/3] overflow-hidden rounded-lg">
                         <img
                           src={service.image}
                           alt={service.title}
@@ -171,7 +172,7 @@ export default function Services() {
           </p>
           <Link
             to="/contacts"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg gradient-primary glow-primary text-primary-foreground font-medium"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-colors"
           >
             Заказать расчёт
             <ArrowRight className="w-4 h-4" />
