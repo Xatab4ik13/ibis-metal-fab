@@ -1,85 +1,143 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
+const services = [
+  { label: "Гибка листового металла", path: "/services/bending" },
+  { label: "Раскрой листового металла", path: "/services/cutting" },
+  { label: "Токарно-фрезерные работы", path: "/services/milling" },
+  { label: "Газо-плазменная резка", path: "/services/plasma" },
+  { label: "Сварка", path: "/services/welding" },
+  { label: "Порошковая покраска", path: "/services/painting" },
+];
+
 const navItems = [
   { label: "Главная", path: "/" },
-  { label: "Услуги", path: "/services" },
+  { label: "Услуги", path: "/services", hasDropdown: true },
   { label: "Контакты", path: "/contacts" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
+  const isActive = (path: string) => {
+    if (path === "/services") {
+      return location.pathname.startsWith("/services");
+    }
+    return location.pathname === path;
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center font-bold text-primary-foreground text-lg">
-              И
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-xl tracking-wide text-foreground">
-                ООО ИБИС
-              </span>
-              <span className="text-xs text-muted-foreground tracking-widest uppercase">
-                Металлообработка
-              </span>
-            </div>
-          </Link>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top bar - white with contact info */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center font-bold text-white text-xl">
+                И
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-xl tracking-wide text-gray-900">
+                  ООО ИБИС
+                </span>
+                <span className="text-[10px] text-gray-500 tracking-[0.15em] uppercase">
+                  Металлообработка
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`relative text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                }`}
+            {/* Right side - phone & CTA */}
+            <div className="hidden md:flex items-center gap-6">
+              <a
+                href="tel:+74951234567"
+                className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors font-medium"
               >
-                {item.label}
-                {location.pathname === item.path && (
-                  <motion.span
-                    layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                  />
-                )}
-              </Link>
-            ))}
-          </nav>
+                <Phone className="w-5 h-5 text-primary" />
+                <span className="text-lg">+7 (495) 123-45-67</span>
+              </a>
+              <Button asChild className="bg-primary hover:bg-primary/90 text-white font-medium px-6 h-11">
+                <Link to="/contacts">Оставить заявку</Link>
+              </Button>
+            </div>
 
-          {/* Phone & CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="tel:+74951234567"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            {/* Mobile Menu Toggle */}
+            <button
+              className="md:hidden p-2 text-gray-900"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <Phone className="w-4 h-4" />
-              +7 (495) 123-45-67
-            </a>
-            <Button asChild className="gradient-primary glow-primary">
-              <Link to="/contacts">Заказать расчёт</Link>
-            </Button>
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
+
+      {/* Navigation bar - dark */}
+      <nav className="hidden md:block bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-1 h-14">
+            {navItems.map((item) => (
+              <div
+                key={item.path}
+                className="relative"
+                onMouseEnter={() => item.hasDropdown && setIsServicesOpen(true)}
+                onMouseLeave={() => item.hasDropdown && setIsServicesOpen(false)}
+              >
+                <Link
+                  to={item.path}
+                  className={`flex items-center gap-1 px-5 py-4 text-sm font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "text-primary"
+                      : "text-foreground/80 hover:text-primary"
+                  }`}
+                >
+                  {item.label}
+                  {item.hasDropdown && (
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                  )}
+                </Link>
+
+                {/* Dropdown for services */}
+                {item.hasDropdown && (
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 w-72 bg-card border border-border shadow-xl rounded-lg overflow-hidden z-50"
+                      >
+                        <div className="py-2">
+                          {services.map((service) => (
+                            <Link
+                              key={service.path}
+                              to={service.path}
+                              className={`block px-5 py-3 text-sm transition-colors ${
+                                location.pathname === service.path
+                                  ? "text-primary bg-primary/5"
+                                  : "text-foreground/80 hover:text-primary hover:bg-muted/50"
+                              }`}
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -88,34 +146,69 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card border-t border-border overflow-hidden"
+            className="md:hidden bg-card border-b border-border overflow-hidden"
           >
-            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+            <nav className="container mx-auto px-4 py-6 flex flex-col gap-2">
               {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-lg font-medium py-2 transition-colors ${
-                    location.pathname === item.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={() => !item.hasDropdown && setIsMenuOpen(false)}
+                    className={`flex items-center justify-between text-lg font-medium py-3 transition-colors ${
+                      isActive(item.path)
+                        ? "text-primary"
+                        : "text-foreground"
+                    }`}
+                  >
+                    {item.label}
+                    {item.hasDropdown && (
+                      <ChevronDown 
+                        className={`w-5 h-5 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setIsServicesOpen(!isServicesOpen);
+                        }}
+                      />
+                    )}
+                  </Link>
+                  
+                  {/* Mobile submenu */}
+                  {item.hasDropdown && isServicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="pl-4 border-l-2 border-primary/30 ml-2 mb-2"
+                    >
+                      {services.map((service) => (
+                        <Link
+                          key={service.path}
+                          to={service.path}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`block py-2 text-sm ${
+                            location.pathname === service.path
+                              ? "text-primary"
+                              : "text-muted-foreground"
+                          }`}
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
               ))}
-              <div className="pt-4 border-t border-border">
+              
+              <div className="pt-4 mt-2 border-t border-border">
                 <a
                   href="tel:+74951234567"
-                  className="flex items-center gap-2 text-muted-foreground mb-4"
+                  className="flex items-center gap-2 text-foreground mb-4"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-5 h-5 text-primary" />
                   +7 (495) 123-45-67
                 </a>
-                <Button asChild className="w-full gradient-primary">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90">
                   <Link to="/contacts" onClick={() => setIsMenuOpen(false)}>
-                    Заказать расчёт
+                    Оставить заявку
                   </Link>
                 </Button>
               </div>
