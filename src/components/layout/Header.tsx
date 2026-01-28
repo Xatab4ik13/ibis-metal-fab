@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import logoIbis from "@/assets/logo-ibis.png";
 
 const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
@@ -39,17 +40,11 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center font-bold text-white text-xl">
-                И
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-wide text-gray-900">
-                  ООО ИБИС
-                </span>
-                <span className="text-[10px] text-gray-500 tracking-[0.15em] uppercase">
-                  Металлообработка
-                </span>
-              </div>
+              <img 
+                src={logoIbis} 
+                alt="ООО ИБИС" 
+                className="h-12 w-auto"
+              />
             </Link>
 
             {/* Right side - phone & CTA */}
