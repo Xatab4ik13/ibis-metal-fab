@@ -16,6 +16,10 @@ import cabinetFrame from "@/assets/products/cabinet-frame.jpg";
 import bodorLaser from "@/assets/equipment/bodor-laser.jpg";
 import trumatic200Work from "@/assets/equipment/trumatic-200-work.jpg";
 import trumaticVideo from "@/assets/equipment/trumatic-cutting-video.mp4";
+import millingFrame from "@/assets/products/milling-frame.jpg";
+import millingFlange from "@/assets/products/milling-flange.jpg";
+import cncControlPanel from "@/assets/equipment/cnc-control-panel.jpg";
+import cncMillingProcess from "@/assets/equipment/cnc-milling-process.jpg";
 
 const servicesData: Record<string, {
   title: string;
@@ -103,7 +107,7 @@ const servicesData: Record<string, {
       "Мы работаем с различными материалами: сталь, нержавеющая сталь, алюминий, латунь, бронза, пластики. Современное оборудование с ЧПУ обеспечивает высочайшую точность и повторяемость.",
       "Наши технологи помогут оптимизировать конструкцию детали для снижения стоимости производства без потери функциональных характеристик.",
     ],
-    images: [cncMilling],
+    images: [cncMillingProcess, cncControlPanel, millingFrame, millingFlange, cncMilling],
     features: [
       "Работа по чертежам и образцам",
       "Единичные и серийные партии",
