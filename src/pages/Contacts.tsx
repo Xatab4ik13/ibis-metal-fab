@@ -1,11 +1,12 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send, Paperclip, X, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Paperclip, X, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contacts() {
   const { toast } = useToast();
@@ -37,19 +38,61 @@ export default function Contacts() {
     setFiles(files.filter((_, i) => i !== index));
   };
 
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const base64 = (reader.result as string).split(',')[1];
+        resolve(base64);
+      };
+      reader.onerror = reject;
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Convert files to base64
+      const filesData = await Promise.all(
+        files.map(async (file) => ({
+          name: file.name,
+          content: await fileToBase64(file),
+          type: file.type,
+        }))
+      );
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время.",
-    });
+      const { data, error } = await supabase.functions.invoke('send-contact-form', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          files: filesData,
+        },
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFiles([]);
+      toast({
+        title: "Заявка отправлена!",
+        description: "Мы свяжемся с вами в ближайшее время.",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Ошибка отправки",
+        description: "Произошла ошибка при отправке формы. Попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -261,7 +304,7 @@ export default function Contacts() {
                     >
                       {isSubmitting ? (
                         <>
-                          <span className="animate-spin mr-2">⏳</span>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                           Отправка...
                         </>
                       ) : (
