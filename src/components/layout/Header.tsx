@@ -9,7 +9,6 @@ const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
   { label: "Раскрой листового металла", path: "/services/cutting" },
   { label: "Токарно-фрезерные работы", path: "/services/milling" },
-  { label: "Газо-плазменная резка", path: "/services/plasma" },
   { label: "Сварка", path: "/services/welding" },
   { label: "Порошковая покраска", path: "/services/painting" },
 ];
