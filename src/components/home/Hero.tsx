@@ -6,9 +6,9 @@ const quickServices = [
   { label: "Гибка металла", path: "/services/bending" },
   { label: "Раскрой металла", path: "/services/cutting" },
   { label: "Токарные работы", path: "/services/milling" },
-  { label: "Плазменная резка", path: "/services/plasma" },
   { label: "Сварка", path: "/services/welding" },
   { label: "Покраска", path: "/services/painting" },
+  { label: "Галерея работ", path: "/gallery" },
 ];
 
 export default function Hero() {
