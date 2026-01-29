@@ -14,6 +14,8 @@ import cncPlasma from "@/assets/equipment/cnc-plasma.jpg";
 import redBoxes from "@/assets/products/red-boxes.jpg";
 import cabinetFrame from "@/assets/products/cabinet-frame.jpg";
 import bodorLaser from "@/assets/equipment/bodor-laser.jpg";
+import trumatic200Work from "@/assets/equipment/trumatic-200-work.jpg";
+import trumaticVideo from "@/assets/equipment/trumatic-cutting-video.mp4";
 
 const servicesData: Record<string, {
   title: string;
@@ -21,6 +23,7 @@ const servicesData: Record<string, {
   description: string;
   longDescription: string[];
   images: string[];
+  video?: string;
   features: string[];
   specs: { label: string; value: string }[];
   process: { step: number; title: string; description: string }[];
@@ -67,7 +70,8 @@ const servicesData: Record<string, {
       "Станок плазменной и газокислородной резки. Оборудование предназначено для резки плазменной дугой различных металлов толщиной от 5 до 30 мм. Высокоточное числовое программное управление позволяет изготавливать детали любой конфигурации. Рабочая поверхность 2000×6000 мм.",
       "Расчет стоимости пробивных работ производится индивидуально на основании представленной технической документации.",
     ],
-    images: [trumatic200, trumatic2000, bodorLaser, plasmaCutter, cncPlasma],
+    images: [trumatic200Work, trumatic200, trumatic2000, bodorLaser, plasmaCutter, cncPlasma],
+    video: trumaticVideo,
     features: [
       "Лазерная резка стали до 12 мм",
       "Газо-плазменная резка до 30 мм",
@@ -272,14 +276,37 @@ export default function ServiceDetail() {
                 </div>
               </motion.div>
 
-              {/* Image Gallery */}
-              {service.images.length > 1 && (
+              {/* Video */}
+              {service.video && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                   className="mb-16"
                 >
+                  <h2 className="text-2xl font-bold mb-8">Видео работы оборудования</h2>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <video
+                      src={service.video}
+                      controls
+                      className="w-full h-full object-cover"
+                      poster={service.images[0]}
+                    >
+                      Ваш браузер не поддерживает воспроизведение видео.
+                    </video>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Image Gallery */}
+              {service.images.length > 1 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="mb-16"
+                >
+                  <h2 className="text-2xl font-bold mb-8">Фотогалерея</h2>
                   <div className="grid md:grid-cols-2 gap-4">
                     {service.images.map((image, index) => (
                       <div key={index} className="relative aspect-[4/3] overflow-hidden group">
