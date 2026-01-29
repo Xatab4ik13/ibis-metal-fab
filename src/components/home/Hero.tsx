@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-sparks.jpg";
 const quickServices = [
   { label: "Гибка металла", path: "/services/bending" },
   { label: "Раскрой металла", path: "/services/cutting" },
-  { label: "Токарные работы", path: "/services/milling" },
+  { label: "Токарно-фрезерные", path: "/services/milling" },
   { label: "Сварка", path: "/services/welding" },
   { label: "Покраска", path: "/services/painting" },
   { label: "Галерея работ", path: "/gallery" },
