@@ -6,7 +6,6 @@ import { useState } from "react";
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import trumatic from "@/assets/equipment/trumatic-2000r-full.jpg";
 import cncMilling from "@/assets/equipment/cnc-milling-5axis.jpg";
-import ajanPlasma from "@/assets/equipment/ajan-cnc-cutting.jpg";
 import perforatedBox from "@/assets/products/perforated-box.jpg";
 import cabinetFrame from "@/assets/products/cabinet-frame.jpg";
 
@@ -19,7 +18,7 @@ const services = [
   },
   {
     title: "Раскрой листового металла",
-    description: "Координатная пробивка на Trumatic 2000R — высокоточная обработка стали и алюминия",
+    description: "Лазерная резка, газо-плазменная резка и координатная пробивка на станках Trumpf с ЧПУ",
     path: "/services/cutting",
     image: trumatic,
   },
@@ -28,12 +27,6 @@ const services = [
     description: "5-осевая обработка деталей любой сложности на современных станках с ЧПУ",
     path: "/services/milling",
     image: cncMilling,
-  },
-  {
-    title: "Газо-плазменная резка",
-    description: "Станок Ajan CNC с рабочей зоной 2000×6000 мм, резка металла толщиной до 50 мм",
-    path: "/services/plasma",
-    image: ajanPlasma,
   },
   {
     title: "Сварка",

@@ -6,7 +6,6 @@ import Layout from "@/components/layout/Layout";
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import trumatic from "@/assets/equipment/trumatic-2000r-full.jpg";
 import cncMilling from "@/assets/equipment/cnc-milling-5axis.jpg";
-import ajanPlasma from "@/assets/equipment/ajan-cnc-cutting.jpg";
 import perforatedBox from "@/assets/products/perforated-box.jpg";
 import cabinetFrame from "@/assets/products/cabinet-frame.jpg";
 
@@ -22,10 +21,10 @@ const services = [
   {
     id: "cutting",
     title: "Раскрой листового металла",
-    shortDesc: "Координатная пробивка Trumatic 2000R",
-    description: "Наше производство оснащено современными высокоточными станками с ЧПУ. Предлагаем услуги по координатной пробивке металла различной степени сложности на высокотехнологичном станке Trumatic 2000R немецкой компании Trumpf.",
+    shortDesc: "Лазер, плазма, координатная пробивка",
+    description: "Все работы производятся на высоком профессиональном уровне в кратчайшие сроки благодаря использованию высокопроизводительных станков. Наше производство оснащено современными высокоточными станками с ЧПУ.",
     image: trumatic,
-    features: ["Сталь 0.5-3.0 мм", "Алюминий до 4.0 мм", "ЧПУ управление"],
+    features: ["Лазерная резка", "Газо-плазменная резка", "Пробивка Trumpf"],
   },
   {
     id: "milling",
@@ -34,14 +33,6 @@ const services = [
     description: "Предприятие производит токарные и фрезерные работы как по чертежам, так и по образцам требуемой продукции. Мощный станочный парк и высококвалифицированные специалисты позволяют производить детали любой сложности от единичных до серийных партий.",
     image: cncMilling,
     features: ["По чертежам и образцам", "Любая сложность", "Единичные и серийные партии"],
-  },
-  {
-    id: "plasma",
-    title: "Газо-плазменная резка",
-    shortDesc: "Рабочая поверхность 2000×6000 мм",
-    description: "Станок плазменной и газокислородной резки. Оборудование предназначено для резки плазменной дугой различных металлов толщиной от 1 до 50 мм, газом до 200мм. Высокоточное ЧПУ позволяет изготавливать детали любой конфигурации.",
-    image: ajanPlasma,
-    features: ["Плазма: 1-50 мм", "Газ: до 200 мм", "Любая конфигурация"],
   },
   {
     id: "welding",
