@@ -1,8 +1,14 @@
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +18,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+Sitemap: https://obrabotka-met.ru/sitemap.xml
+
+Host: https://obrabotka-met.ru
