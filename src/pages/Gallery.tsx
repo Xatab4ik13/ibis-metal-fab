@@ -10,6 +10,7 @@ import metalBracket from "@/assets/gallery/metal-bracket.jpg";
 import cutParts from "@/assets/gallery/cut-parts.jpg";
 import largePanels from "@/assets/gallery/large-panels.jpg";
 import milledPart from "@/assets/gallery/milled-part.jpg";
+import laserCuttingWork from "@/assets/gallery/laser-cutting-work.jpg";
 
 // Import existing product images
 import redBoxes from "@/assets/products/red-boxes.jpg";
@@ -18,6 +19,7 @@ import perforatedBox from "@/assets/products/perforated-box.jpg";
 import metalBrackets from "@/assets/products/metal-brackets.jpg";
 
 const galleryImages = [
+  { src: laserCuttingWork, title: "Лазерный раскрой листа", category: "Раскрой" },
   { src: bentProfiles, title: "Гнутые профили", category: "Гибка" },
   { src: paintedOrange, title: "Порошковая покраска RAL 2004", category: "Покраска" },
   { src: whiteFrames, title: "Сварные каркасы", category: "Сварка" },

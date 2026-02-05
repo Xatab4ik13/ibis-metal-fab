@@ -361,7 +361,7 @@ export default function Contacts() {
               {/* Map */}
               <div className="rounded-2xl overflow-hidden industrial-border aspect-[4/3]">
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?pt=37.976944,55.761944&z=16&l=map"
+                  src="https://yandex.ru/map-widget/v1/?ll=37.947156%2C55.743462&mode=search&oid=140273645268&ol=biz&z=17"
                   className="w-full h-full"
                   loading="lazy"
                   title="Карта - ООО ИБИС"

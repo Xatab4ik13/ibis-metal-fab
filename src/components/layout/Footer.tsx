@@ -90,7 +90,7 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-6">На карте</h3>
             <div className="aspect-square rounded-lg bg-muted industrial-border overflow-hidden">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?pt=37.976944,55.761944&z=16&l=map"
+                src="https://yandex.ru/map-widget/v1/?ll=37.947156%2C55.743462&mode=search&oid=140273645268&ol=biz&z=17"
                 className="w-full h-full"
                 loading="lazy"
                 title="Карта - ООО ИБИС"
