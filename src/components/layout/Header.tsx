@@ -35,11 +35,11 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Logo - positioned absolutely over both bars */}
-      <Link to="/" className="absolute top-0 left-0 z-[60] flex items-start overflow-visible">
+      <Link to="/" className="absolute top-0 left-0 z-[60]">
         <img 
           src={logoAtm} 
           alt="ООО АТМ" 
-          className="h-60 md:h-72 w-auto -mt-4 ml-2"
+          className="h-60 md:h-72 w-auto"
         />
       </Link>
 
