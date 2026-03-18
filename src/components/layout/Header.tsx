@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoIbis from "@/assets/logo-ibis.png";
+import logoAtm from "@/assets/logo-atm.png";
 
 const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
@@ -41,8 +41,8 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center -ml-12">
               <img 
-                src={logoIbis} 
-                alt="ООО ИБИС" 
+                src={logoAtm} 
+                alt="ООО АТМ" 
                 className="h-14 md:h-16 w-auto scale-[4] origin-left translate-y-3"
               />
             </Link>

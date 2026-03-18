@@ -99,7 +99,7 @@ export default function Contacts() {
     {
       icon: MapPin,
       label: "Адрес",
-      value: "Московская область, г. Балашиха, мкр Кучино, ул. Южная 17/1",
+      value: "143981, Московская область, г. Балашиха, пр-д Институтский (мкр. Кучино), д. 15",
       href: null,
     },
     {
@@ -315,12 +315,20 @@ export default function Contacts() {
                       )}
                     </Button>
 
-                    <p className="text-xs text-muted-foreground text-center">
-                      Нажимая кнопку, вы соглашаетесь с{" "}
-                      <a href="/privacy" className="text-primary hover:underline">
-                        политикой конфиденциальности
-                      </a>
-                    </p>
+                    <label className="flex items-start gap-3 text-xs text-muted-foreground cursor-pointer">
+                      <input
+                        type="checkbox"
+                        required
+                        className="mt-0.5 accent-primary"
+                      />
+                      <span>
+                        Нажимая кнопку, я даю согласие на обработку моих{" "}
+                        <a href="/privacy" className="text-primary hover:underline">
+                          персональных данных
+                        </a>{" "}
+                        в соответствии с Политикой конфиденциальности ООО «АТМ»
+                      </span>
+                    </label>
                   </form>
                 )}
               </div>
@@ -364,7 +372,7 @@ export default function Contacts() {
                   src="https://yandex.ru/map-widget/v1/?ll=37.947156%2C55.743462&mode=search&oid=140273645268&ol=biz&z=17"
                   className="w-full h-full"
                   loading="lazy"
-                  title="Карта - ООО ИБИС"
+                  title="Карта - ООО АТМ"
                   allowFullScreen
                 />
               </div>

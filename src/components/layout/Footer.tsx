@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import logoIbis from "@/assets/logo-ibis.png";
+import logoAtm from "@/assets/logo-atm.png";
 
 const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
@@ -19,14 +19,14 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <img 
-                src={logoIbis} 
-                alt="ООО ИБИС" 
+                src={logoAtm} 
+                alt="ООО АТМ" 
                 className="h-10 w-auto brightness-0 invert"
               />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Профессиональная металлообработка на высокоточном оборудовании Trumpf. 
-              Работаем с 2005 года.
+              Работаем с 2015 года.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <span className="text-muted-foreground">
-                  Московская область, г. Балашиха<br />мкр Кучино, ул. Южная 17/1
+                  Московская область, г. Балашиха<br />пр-д Институтский (мкр. Кучино), д. 15
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm">
@@ -93,7 +93,7 @@ export default function Footer() {
                 src="https://yandex.ru/map-widget/v1/?ll=37.947156%2C55.743462&mode=search&oid=140273645268&ol=biz&z=17"
                 className="w-full h-full"
                 loading="lazy"
-                title="Карта - ООО ИБИС"
+                title="Карта - ООО АТМ"
                 allowFullScreen
               />
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
 
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} ООО ИБИС. Все права защищены.
+            © {new Date().getFullYear()} ООО АТМ. Все права защищены.
           </p>
           <div className="flex gap-6">
             <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
