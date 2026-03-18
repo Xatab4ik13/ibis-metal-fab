@@ -39,7 +39,7 @@ export default function Header() {
         <img 
           src={logoAtm} 
           alt="ООО АТМ" 
-          className="h-12 md:h-16 w-auto"
+          className="h-24 md:h-32 w-auto"
         />
       </Link>
 
