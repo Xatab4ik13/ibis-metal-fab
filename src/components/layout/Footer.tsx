@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import logoIbis from "@/assets/logo-ibis.png";
+import logoAtm from "@/assets/logo-atm.png";
 
 const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
