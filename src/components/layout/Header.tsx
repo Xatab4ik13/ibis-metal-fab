@@ -34,16 +34,14 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Logo - pinned to top-left, constrained inside double header */}
-      <div className="absolute top-0 left-0 z-[60] h-16 md:h-[136px] w-[330px] overflow-hidden">
-        <Link to="/" className="absolute top-0 left-0 block">
-          <img 
-            src={logoAtm} 
-            alt="ООО АТМ" 
-            className="h-60 md:h-72 w-auto"
-          />
-        </Link>
-      </div>
+      {/* Logo - spans both header bars, starts from top-left corner */}
+      <Link to="/" className="absolute top-0 left-0 z-[60] pointer-events-auto">
+        <img 
+          src={logoAtm} 
+          alt="ООО АТМ" 
+          className="h-60 md:h-72 w-auto"
+        />
+      </Link>
 
       {/* Top bar - white with contact info */}
       <div className="bg-white border-b border-gray-100">
