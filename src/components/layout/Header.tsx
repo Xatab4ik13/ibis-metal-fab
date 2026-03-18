@@ -41,8 +41,8 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center -ml-12">
               <img 
-                src={logoIbis} 
-                alt="ООО ИБИС" 
+                src={logoAtm} 
+                alt="ООО АТМ" 
                 className="h-14 md:h-16 w-auto scale-[4] origin-left translate-y-3"
               />
             </Link>
