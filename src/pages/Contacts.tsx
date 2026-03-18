@@ -364,7 +364,7 @@ export default function Contacts() {
                   src="https://yandex.ru/map-widget/v1/?ll=37.947156%2C55.743462&mode=search&oid=140273645268&ol=biz&z=17"
                   className="w-full h-full"
                   loading="lazy"
-                  title="Карта - ООО ИБИС"
+                  title="Карта - ООО АТМ"
                   allowFullScreen
                 />
               </div>
