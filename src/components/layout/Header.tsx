@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoIbis from "@/assets/logo-ibis.png";
+import logoAtm from "@/assets/logo-atm.png";
 
 const services = [
   { label: "Гибка листового металла", path: "/services/bending" },
