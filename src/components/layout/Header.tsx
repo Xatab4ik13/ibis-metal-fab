@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Logo - spans both header bars, starts from top-left corner */}
-      <Link to="/" className="absolute -top-1 left-2 z-[60] h-16 md:h-20 flex items-center">
+      <Link to="/" className="absolute -top-2 left-2 z-[60] h-16 md:h-20 flex items-center">
         <img 
           src={logoAtm} 
           alt="ООО АТМ" 
