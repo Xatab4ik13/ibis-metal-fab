@@ -19,8 +19,8 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <img 
-                src={logoIbis} 
-                alt="ООО ИБИС" 
+                src={logoAtm} 
+                alt="ООО АТМ" 
                 className="h-10 w-auto brightness-0 invert"
               />
             </div>
