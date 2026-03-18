@@ -10,6 +10,7 @@ import ServiceDetail from "./pages/ServiceDetail";
 import Gallery from "./pages/Gallery";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
