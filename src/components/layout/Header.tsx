@@ -34,18 +34,19 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Logo - positioned absolutely over both bars */}
+      <Link to="/" className="absolute top-0 left-4 md:left-8 z-[60] flex items-start">
+        <img 
+          src={logoAtm} 
+          alt="ООО АТМ" 
+          className="h-20 md:h-24 w-auto mt-1"
+        />
+      </Link>
+
       {/* Top bar - white with contact info */}
       <div className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center -ml-12">
-              <img 
-                src={logoAtm} 
-                alt="ООО АТМ" 
-                className="h-14 md:h-16 w-auto scale-[4] origin-left translate-y-3"
-              />
-            </Link>
+          <div className="flex items-center justify-end h-16 md:h-20">
 
             {/* Right side - phone & CTA */}
             <div className="hidden md:flex items-center gap-6">
