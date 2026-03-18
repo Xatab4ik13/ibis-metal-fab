@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Privacy() {
   return (
     <Layout>
-      <section className="py-24 relative overflow-hidden">
+      <section className="pt-40 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
