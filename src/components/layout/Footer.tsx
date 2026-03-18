@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Профессиональная металлообработка на высокоточном оборудовании Trumpf. 
-              Работаем с 2005 года.
+              Работаем с 2015 года.
             </p>
           </div>
 

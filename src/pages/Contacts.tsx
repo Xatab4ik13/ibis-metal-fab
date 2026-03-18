@@ -315,12 +315,20 @@ export default function Contacts() {
                       )}
                     </Button>
 
-                    <p className="text-xs text-muted-foreground text-center">
-                      Нажимая кнопку, вы соглашаетесь с{" "}
-                      <a href="/privacy" className="text-primary hover:underline">
-                        политикой конфиденциальности
-                      </a>
-                    </p>
+                    <label className="flex items-start gap-3 text-xs text-muted-foreground cursor-pointer">
+                      <input
+                        type="checkbox"
+                        required
+                        className="mt-0.5 accent-primary"
+                      />
+                      <span>
+                        Нажимая кнопку, я даю согласие на обработку моих{" "}
+                        <a href="/privacy" className="text-primary hover:underline">
+                          персональных данных
+                        </a>{" "}
+                        в соответствии с Политикой конфиденциальности ООО «АТМ»
+                      </span>
+                    </label>
                   </form>
                 )}
               </div>
