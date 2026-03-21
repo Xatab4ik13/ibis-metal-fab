@@ -533,6 +533,61 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      {faqs && faqs.length > 0 && (
+        <section className="py-20 bg-card/30 border-y border-border">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-sm font-medium tracking-[0.2em] text-primary uppercase">
+                  Вопросы и ответы
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-10">
+                Частые вопросы
+              </h2>
+              <div className="space-y-3">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="border border-border rounded-lg overflow-hidden bg-card"
+                  >
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
+                    >
+                      <span className="font-medium pr-4">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform ${
+                          openFaq === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        className="px-5 pb-5"
+                      >
+                        <p className="text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Navigation */}
       <section className="pb-24">
         <div className="container mx-auto px-4">
