@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import bentProfiles from "@/assets/gallery/bent-profiles.jpg";
 import paintedOrange from "@/assets/gallery/painted-orange.jpg";
