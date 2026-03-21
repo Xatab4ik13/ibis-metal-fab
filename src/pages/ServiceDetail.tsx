@@ -257,6 +257,7 @@ const serviceOrder = ["bending", "cutting", "milling", "welding", "painting"];
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const service = id ? servicesData[id] : null;
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   if (!service) {
     return (
