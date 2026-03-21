@@ -65,7 +65,11 @@ export default function Gallery() {
 
   return (
     <Layout>
-      {/* Hero */}
+      <SEO
+        title="Галерея работ — Примеры металлообработки"
+        description="Фото выполненных работ ООО АТМ: гибка, лазерный раскрой, фрезеровка, сварка и порошковая покраска металлоизделий в Москве. Корпуса, каркасы, кронштейны."
+        canonical="/gallery"
+      />
       <section className="pt-32 md:pt-40 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
 

@@ -125,8 +125,12 @@ export default function Contacts() {
 
   return (
     <Layout>
+      <SEO
+        title="Контакты — Заказать металлообработку в Москве"
+        description="Свяжитесь с ООО АТМ: ☎ 8 (901) 744-94-40. Адрес: Балашиха, мкр Кучино, ул. Южная 17/1. Отправьте чертежи — рассчитаем стоимость за 1 день."
+        canonical="/contacts"
+      />
       {/* Hero */}
-      <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div

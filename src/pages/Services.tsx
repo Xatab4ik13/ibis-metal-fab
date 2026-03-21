@@ -56,7 +56,11 @@ const services = [
 export default function Services() {
   return (
     <Layout>
-      {/* Hero */}
+      <SEO
+        title="Услуги металлообработки в Москве — Гибка, Раскрой, Сварка, Покраска"
+        description="Полный цикл металлообработки в Москве: гибка листового металла, лазерная резка, координатная пробивка Trumpf, токарно-фрезерные работы, сварка, порошковая покраска. Работаем с юрлицами."
+        canonical="/services"
+      />
       <section className="pt-32 md:pt-40 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         
