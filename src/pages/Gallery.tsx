@@ -21,18 +21,18 @@ import perforatedBox from "@/assets/products/perforated-box.jpg";
 import metalBrackets from "@/assets/products/metal-brackets.jpg";
 
 const galleryImages = [
-  { src: laserCuttingWork, title: "Лазерный раскрой листа", category: "Раскрой" },
-  { src: bentProfiles, title: "Гнутые профили", category: "Гибка" },
-  { src: paintedOrange, title: "Порошковая покраска RAL 2004", category: "Покраска" },
-  { src: whiteFrames, title: "Сварные каркасы", category: "Сварка" },
-  { src: metalBracket, title: "Корпусная деталь", category: "Гибка" },
-  { src: cutParts, title: "Детали после раскроя", category: "Раскрой" },
-  { src: largePanels, title: "Крупногабаритные панели", category: "Раскрой" },
-  { src: milledPart, title: "Фрезерованная деталь", category: "Фрезеровка" },
-  { src: redBoxes, title: "Окрашенные корпуса", category: "Покраска" },
-  { src: cabinetFrame, title: "Каркас шкафа", category: "Сварка" },
-  { src: perforatedBox, title: "Перфорированный корпус", category: "Раскрой" },
-  { src: metalBrackets, title: "Кронштейны", category: "Гибка" },
+  { src: laserCuttingWork, title: "Лазерный раскрой листа", category: "Раскрой", alt: "Лазерная резка листового металла на станке с ЧПУ в Москве" },
+  { src: bentProfiles, title: "Гнутые профили", category: "Гибка", alt: "Гнутые профили из листового металла — гибка на прессе Trumpf" },
+  { src: paintedOrange, title: "Порошковая покраска RAL 2004", category: "Покраска", alt: "Порошковая покраска металлоизделий в оранжевый цвет RAL 2004" },
+  { src: whiteFrames, title: "Сварные каркасы", category: "Сварка", alt: "Сварные каркасы из стали — изготовление металлоконструкций" },
+  { src: metalBracket, title: "Корпусная деталь", category: "Гибка", alt: "Корпусная деталь из листовой стали после гибки на прессе" },
+  { src: cutParts, title: "Детали после раскроя", category: "Раскрой", alt: "Детали из металла после лазерного раскроя на станке с ЧПУ" },
+  { src: largePanels, title: "Крупногабаритные панели", category: "Раскрой", alt: "Крупногабаритные металлические панели после раскроя и гибки" },
+  { src: milledPart, title: "Фрезерованная деталь", category: "Фрезеровка", alt: "Фрезерованная деталь из алюминия — токарно-фрезерные работы ЧПУ" },
+  { src: redBoxes, title: "Окрашенные корпуса", category: "Покраска", alt: "Окрашенные металлические корпуса — порошковая покраска RAL" },
+  { src: cabinetFrame, title: "Каркас шкафа", category: "Сварка", alt: "Сварной каркас шкафа из стального профиля" },
+  { src: perforatedBox, title: "Перфорированный корпус", category: "Раскрой", alt: "Перфорированный металлический корпус — координатная пробивка Trumpf" },
+  { src: metalBrackets, title: "Кронштейны", category: "Гибка", alt: "Металлические кронштейны — гибка и раскрой листовой стали" },
 ];
 
 export default function Gallery() {
