@@ -126,7 +126,7 @@ export default function Services() {
                       <div className="aspect-[4/3] overflow-hidden rounded-lg">
                         <img
                           src={service.image}
-                          alt={service.title}
+                          alt={service.alt}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
