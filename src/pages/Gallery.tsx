@@ -210,7 +210,7 @@ export default function Gallery() {
             >
               <img
                 src={filteredImages[selectedImage].src}
-                alt={filteredImages[selectedImage].title}
+                alt={filteredImages[selectedImage].alt}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
               <div className="text-center mt-4">
