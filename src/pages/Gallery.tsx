@@ -83,6 +83,8 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-primary" />
               <span className="text-sm font-medium tracking-[0.2em] text-primary uppercase">
                 Наши работы
               </span>

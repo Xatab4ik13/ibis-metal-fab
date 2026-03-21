@@ -143,6 +143,7 @@ export default function Contacts() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
+            <span className="text-primary text-sm font-medium uppercase tracking-widest mb-4 block">
               Контакты
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
