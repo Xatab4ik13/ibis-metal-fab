@@ -279,8 +279,6 @@ export default function ServiceDetail() {
   const nextService = currentIndex < serviceOrder.length - 1 ? serviceOrder[currentIndex + 1] : null;
   const seo = id ? seoData[id] : null;
   const faqs = id ? faqData[id] : null;
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   const faqSchema = faqs ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
