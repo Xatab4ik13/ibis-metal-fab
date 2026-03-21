@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import brsPress from "@/assets/equipment/brs-press.jpg";
