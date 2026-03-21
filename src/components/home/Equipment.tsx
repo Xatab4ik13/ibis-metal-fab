@@ -75,7 +75,7 @@ export default function Equipment() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
                 <img
                   src={item.image}
-                  alt={item.name}
+                  alt={item.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

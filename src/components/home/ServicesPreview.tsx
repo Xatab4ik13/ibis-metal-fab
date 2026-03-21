@@ -71,7 +71,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         >
           <img
             src={service.image}
-            alt={service.title}
+            alt={service.alt}
             className="w-full h-full object-cover"
           />
         </motion.div>
