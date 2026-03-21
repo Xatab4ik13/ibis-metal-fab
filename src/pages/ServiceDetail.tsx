@@ -594,6 +594,33 @@ export default function ServiceDetail() {
         </section>
       )}
 
+      {/* Related Services - Internal Linking */}
+      <section className="py-16 bg-card/30 border-y border-border">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-8">Полный цикл металлообработки</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Мы выполняем все этапы производства — от раскроя заготовки до готового окрашенного изделия. 
+            Закажите несколько операций и получите скидку.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {serviceOrder.filter(s => s !== id).map((serviceId) => (
+              <Link
+                key={serviceId}
+                to={`/services/${serviceId}`}
+                className="group p-5 rounded-lg border border-border hover:border-primary/30 bg-card hover:bg-card/80 transition-all"
+              >
+                <h3 className="font-semibold group-hover:text-primary transition-colors text-sm mb-1">
+                  {servicesData[serviceId].title}
+                </h3>
+                <p className="text-xs text-muted-foreground line-clamp-2">
+                  {servicesData[serviceId].subtitle}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Navigation */}
       <section className="pb-24">
         <div className="container mx-auto px-4">
