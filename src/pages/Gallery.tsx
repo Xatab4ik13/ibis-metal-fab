@@ -75,13 +75,14 @@ export default function Gallery() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
 
         <div className="container mx-auto px-4 relative z-10">
+          <div className="mb-8">
+            <Breadcrumbs items={[{ label: "Галерея работ" }]} />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-primary" />
               <span className="text-sm font-medium tracking-[0.2em] text-primary uppercase">
                 Наши работы
               </span>

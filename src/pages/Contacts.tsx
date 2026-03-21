@@ -135,12 +135,14 @@ export default function Contacts() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container mx-auto px-4 relative z-10">
+          <div className="mb-8">
+            <Breadcrumbs items={[{ label: "Контакты" }]} />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
-            <span className="text-primary text-sm font-medium uppercase tracking-widest mb-4 block">
               Контакты
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
