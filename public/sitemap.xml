@@ -43,6 +43,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://obrabotka-met.ru/articles</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://obrabotka-met.ru/articles/vidy-svarki-tig-mig-mma</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://obrabotka-met.ru/articles/poroshkovaya-pokraska-metalla</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://obrabotka-met.ru/gallery</loc>
     <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>

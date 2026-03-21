@@ -17,6 +17,7 @@ const navItems = [
   { label: "Главная", path: "/" },
   { label: "Услуги", path: "/services", hasDropdown: true },
   { label: "Галерея", path: "/gallery" },
+  { label: "Статьи", path: "/articles" },
   { label: "Контакты", path: "/contacts" },
 ];
 
