@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import trumatic from "@/assets/equipment/trumatic-2000r-full.jpg";
@@ -55,7 +56,11 @@ const services = [
 export default function Services() {
   return (
     <Layout>
-      {/* Hero */}
+      <SEO
+        title="Услуги металлообработки в Москве — Гибка, Раскрой, Сварка, Покраска"
+        description="Полный цикл металлообработки в Москве: гибка листового металла, лазерная резка, координатная пробивка Trumpf, токарно-фрезерные работы, сварка, порошковая покраска. Работаем с юрлицами."
+        canonical="/services"
+      />
       <section className="pt-32 md:pt-40 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         

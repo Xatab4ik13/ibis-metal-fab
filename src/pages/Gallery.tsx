@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 import bentProfiles from "@/assets/gallery/bent-profiles.jpg";
 import paintedOrange from "@/assets/gallery/painted-orange.jpg";
@@ -64,7 +65,11 @@ export default function Gallery() {
 
   return (
     <Layout>
-      {/* Hero */}
+      <SEO
+        title="Галерея работ — Примеры металлообработки"
+        description="Фото выполненных работ ООО АТМ: гибка, лазерный раскрой, фрезеровка, сварка и порошковая покраска металлоизделий в Москве. Корпуса, каркасы, кронштейны."
+        canonical="/gallery"
+      />
       <section className="pt-32 md:pt-40 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
 

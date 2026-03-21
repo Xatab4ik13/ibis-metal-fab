@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { supabase } from "@/integrations/supabase/client";
 
 export default function Contacts() {
@@ -124,6 +125,11 @@ export default function Contacts() {
 
   return (
     <Layout>
+      <SEO
+        title="Контакты — Заказать металлообработку в Москве"
+        description="Свяжитесь с ООО АТМ: ☎ 8 (901) 744-94-40. Адрес: Балашиха, мкр Кучино, ул. Южная 17/1. Отправьте чертежи — рассчитаем стоимость за 1 день."
+        canonical="/contacts"
+      />
       {/* Hero */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />

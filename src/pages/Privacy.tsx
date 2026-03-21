@@ -1,9 +1,15 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
 export default function Privacy() {
   return (
     <Layout>
+      <SEO
+        title="Политика конфиденциальности"
+        description="Политика конфиденциальности и обработки персональных данных ООО АТМ (ИНН 5012090417)."
+        canonical="/privacy"
+      />
       <section className="pt-40 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container mx-auto px-4 relative z-10">

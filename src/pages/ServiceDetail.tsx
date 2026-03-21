@@ -1,8 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import brsPress from "@/assets/equipment/brs-press.jpg";
@@ -194,11 +196,68 @@ const servicesData: Record<string, {
   },
 };
 
+const seoData: Record<string, { title: string; description: string }> = {
+  bending: {
+    title: "Гибка листового металла на заказ в Москве — Прессы Trumpf",
+    description: "Гибка листового металла на гидравлических прессах Trumpf и Ermaksan в Москве. Толщина до 6 мм, длина до 3000 мм. Без сварных швов, высокая точность. Расчёт за 1 день.",
+  },
+  cutting: {
+    title: "Раскрой листового металла — Лазерная резка, Плазма, Пробивка Trumpf",
+    description: "Лазерная резка стали до 12 мм, газо-плазменная резка до 30 мм, координатная пробивка на Trumpf Trumatic. Раскрой любой конфигурации в Москве. Расчёт за 1 день.",
+  },
+  milling: {
+    title: "Токарно-фрезерные работы на заказ в Москве — ЧПУ",
+    description: "Токарные и фрезерные работы на станках с ЧПУ в Москве. Точность до 0.01 мм. Сталь, алюминий, латунь. По чертежам и образцам, от 1 детали до серии.",
+  },
+  welding: {
+    title: "Сварочные работы на заказ в Москве — Аргон, TIG, MIG/MAG",
+    description: "Все виды сварки в Москве: аргонодуговая TIG, полуавтоматическая MIG/MAG, точечная контактная. Нержавейка, алюминий, титан. Сертификация НАКС.",
+  },
+  painting: {
+    title: "Порошковая покраска металла в Москве — Любой цвет RAL",
+    description: "Порошковая покраска металлоизделий до 3.5 м на оборудовании GEMMA в Москве. Любые цвета RAL, высокая стойкость к коррозии. Расчёт за 1 день.",
+  },
+};
+
+const faqData: Record<string, { question: string; answer: string }[]> = {
+  bending: [
+    { question: "Какую максимальную толщину металла можно гнуть?", answer: "На наших прессах Trumpf TrumaBend и Ermaksan PowerBend мы выполняем гибку листового металла толщиной до 6 мм. Максимальная длина гиба — до 3000 мм, усилие пресса до 110 тонн." },
+    { question: "Сколько стоит гибка листового металла?", answer: "Стоимость зависит от толщины металла, количества гибов и объёма партии. Отправьте чертёж — мы рассчитаем стоимость в течение рабочего дня. Работаем как с единичными деталями, так и серийными партиями." },
+    { question: "Какие материалы вы гнёте?", answer: "Мы работаем с чёрной сталью, нержавеющей сталью, оцинкованной сталью и алюминием. Подбираем оснастку под каждый материал для получения качественного гиба без повреждения поверхности." },
+    { question: "Можно ли изготовить сложные профили?", answer: "Да, наше оборудование с ЧПУ позволяет выполнять многопрофильную гибку с высокой точностью. Изготавливаем уголки, швеллеры, П-образные и Z-образные профили, корпусные детали." },
+  ],
+  cutting: [
+    { question: "Какие виды раскроя вы предлагаете?", answer: "Мы выполняем три вида раскроя: лазерная резка (сталь до 12 мм), газо-плазменная резка (5-30 мм) и координатная пробивка на станках Trumpf Trumatic (сталь 0.5-3 мм, алюминий до 6 мм)." },
+    { question: "Какой формат чертежей вы принимаете?", answer: "Принимаем файлы в форматах DXF, DWG, STEP, PDF. Если у вас только эскиз или образец — наши технологи помогут создать чертёж и управляющую программу для станка." },
+    { question: "Какой максимальный размер листа для раскроя?", answer: "Рабочая поверхность станка плазменной резки — 2000×6000 мм. Для лазерной резки и координатной пробивки используются стандартные листы до 1500×3000 мм." },
+    { question: "Сколько стоит лазерная резка металла?", answer: "Стоимость рассчитывается индивидуально и зависит от толщины материала, длины реза и объёма партии. Отправьте чертежи — расчёт стоимости бесплатный и занимает 1 рабочий день." },
+  ],
+  milling: [
+    { question: "Какие материалы вы обрабатываете?", answer: "Работаем со всеми конструкционными материалами: чёрная и нержавеющая сталь, алюминий, латунь, бронза, медь, а также инженерные пластики (капролон, фторопласт)." },
+    { question: "Какая точность обработки?", answer: "Наши станки с ЧПУ обеспечивают точность до 0.01 мм. Контроль размеров выполняется на координатно-измерительном оборудовании." },
+    { question: "Какой минимальный объём заказа?", answer: "Принимаем заказы от 1 детали. Работаем как с единичными образцами и прототипами, так и с серийными партиями до 10 000 штук." },
+    { question: "Можно ли изготовить деталь по образцу?", answer: "Да, мы изготавливаем детали как по чертежам, так и по образцам. Наши технологи выполнят обмер образца, создадут чертёж и управляющую программу для станка." },
+  ],
+  welding: [
+    { question: "Какие виды сварки вы выполняете?", answer: "На нашем производстве представлены все основные виды сварки: ручная дуговая (MMA), полуавтоматическая в среде защитных газов (MIG/MAG), аргонодуговая (TIG) и точечная контактная сварка." },
+    { question: "Свариваете ли вы нержавейку и алюминий?", answer: "Да, для сварки нержавеющей стали, алюминия и титана мы используем аргонодуговую сварку (TIG), которая обеспечивает высокое качество шва и минимальную деформацию." },
+    { question: "Есть ли у ваших сварщиков сертификация?", answer: "Наши сварщики имеют сертификацию НАКС (Национальное Агентство Контроля Сварки), что подтверждает квалификацию для работы с ответственными конструкциями." },
+    { question: "Какую толщину металла можно варить?", answer: "Мы свариваем металл толщиной от 0.5 мм (точечная и TIG сварка) до 50 мм (ручная дуговая и полуавтоматическая сварка)." },
+  ],
+  painting: [
+    { question: "Какой максимальный размер изделия для покраски?", answer: "Наша покрасочная камера GEMMA позволяет окрашивать изделия длиной до 3.5 метров. Для уточнения максимальных габаритов по ширине и высоте свяжитесь с нами." },
+    { question: "Какие цвета доступны?", answer: "Доступна вся палитра цветов RAL — более 200 оттенков. Также предлагаем специальные покрытия: матовые, глянцевые, полуматовые, с текстурой (шагрень, муар, антик)." },
+    { question: "Насколько стойкое порошковое покрытие?", answer: "Порошковое покрытие значительно превосходит обычную краску по стойкости: устойчиво к коррозии, механическим повреждениям, УФ-излучению и перепадам температур. Толщина покрытия 60-120 мкм." },
+    { question: "Можно ли покрасить не ваши изделия?", answer: "Да, мы оказываем услуги порошковой покраски для сторонних заказчиков. Привозите готовые изделия — выполним подготовку поверхности и покраску в нужный цвет." },
+  ],
+};
+
 const serviceOrder = ["bending", "cutting", "milling", "welding", "painting"];
 
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const service = id ? servicesData[id] : null;
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   if (!service) {
     return (
@@ -218,9 +277,52 @@ export default function ServiceDetail() {
   const currentIndex = serviceOrder.indexOf(id || "");
   const prevService = currentIndex > 0 ? serviceOrder[currentIndex - 1] : null;
   const nextService = currentIndex < serviceOrder.length - 1 ? serviceOrder[currentIndex + 1] : null;
+  const seo = id ? seoData[id] : null;
+  const faqs = id ? faqData[id] : null;
+  const faqSchema = faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : undefined;
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "ООО АТМ",
+      "telephone": "8 (901) 744-94-40",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Балашиха",
+        "addressRegion": "Московская область",
+        "addressCountry": "RU"
+      }
+    },
+    "areaServed": ["Москва", "Московская область"]
+  };
+
+  const combinedSchema = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
 
   return (
     <Layout>
+      {seo && (
+        <SEO
+          title={seo.title}
+          description={seo.description}
+          canonical={`/services/${id}`}
+          schema={combinedSchema}
+        />
+      )}
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -430,6 +532,61 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      {faqs && faqs.length > 0 && (
+        <section className="py-20 bg-card/30 border-y border-border">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-sm font-medium tracking-[0.2em] text-primary uppercase">
+                  Вопросы и ответы
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-10">
+                Частые вопросы
+              </h2>
+              <div className="space-y-3">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="border border-border rounded-lg overflow-hidden bg-card"
+                  >
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
+                    >
+                      <span className="font-medium pr-4">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform ${
+                          openFaq === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        className="px-5 pb-5"
+                      >
+                        <p className="text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Navigation */}
       <section className="pb-24">
