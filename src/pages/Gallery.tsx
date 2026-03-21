@@ -143,7 +143,7 @@ export default function Gallery() {
                   <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                     <img
                       src={image.src}
-                      alt={image.title}
+                      alt={image.alt}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     {/* Overlay */}
