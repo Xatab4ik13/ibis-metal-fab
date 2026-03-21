@@ -15,30 +15,35 @@ const services = [
     description: "Гидравлические прессы Trumpf TrumaBend для точной гибки листового металла толщиной до 6 мм",
     path: "/services/bending",
     image: trumpfBend,
+    alt: "Гибка листового металла на прессе Trumpf TrumaBend в Москве",
   },
   {
     title: "Раскрой листового металла",
     description: "Лазерная резка, газо-плазменная резка и координатная пробивка на станках Trumpf с ЧПУ",
     path: "/services/cutting",
     image: trumatic,
+    alt: "Координатно-пробивной станок Trumpf Trumatic 2000R для раскроя металла",
   },
   {
     title: "Токарно-фрезерные работы",
     description: "5-осевая обработка деталей любой сложности на современных станках с ЧПУ",
     path: "/services/milling",
     image: cncMilling,
+    alt: "Фрезерный станок с ЧПУ для обработки деталей из металла",
   },
   {
     title: "Сварка",
     description: "Все виды сварки: ручная дуговая, полуавтоматическая, аргонодуговая, точечная контактная",
     path: "/services/welding",
     image: perforatedBox,
+    alt: "Сварочные работы — перфорированный металлический корпус после сварки",
   },
   {
     title: "Порошковая покраска",
     description: "Оборудование GEMMA для покраски изделий длиной до 3.5 метров в любой цвет RAL",
     path: "/services/painting",
     image: cabinetFrame,
+    alt: "Порошковая покраска металлического каркаса на оборудовании GEMMA",
   },
 ];
 
@@ -66,7 +71,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         >
           <img
             src={service.image}
-            alt={service.title}
+            alt={service.alt}
             className="w-full h-full object-cover"
           />
         </motion.div>

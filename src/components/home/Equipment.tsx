@@ -10,24 +10,28 @@ const equipment = [
     name: "TrumaBend C110",
     type: "Листогибочный пресс",
     specs: "Усилие 110 тонн, длина гиба до 3 м",
+    alt: "Листогибочный пресс Trumpf TrumaBend C110 — гибка металла в Москве",
   },
   {
     image: trumatic2000,
     name: "Trumatic 2000R",
     type: "Координатно-пробивной станок",
     specs: "Сталь 0.5-3мм, алюминий до 4мм",
+    alt: "Координатно-пробивной станок Trumpf Trumatic 2000R для раскроя листового металла",
   },
   {
     image: cncPlasma,
     name: "Ajan CNC",
     type: "Плазменная резка",
     specs: "Рабочая поверхность 2000×6000 мм",
+    alt: "Станок плазменной резки Ajan CNC — резка металла толщиной до 30 мм",
   },
   {
     image: bodorLaser,
     name: "Bodor Laser",
     type: "Лазерная резка",
     specs: "Высокоточная резка металла",
+    alt: "Станок лазерной резки Bodor — высокоточная резка стали до 12 мм",
   },
 ];
 
@@ -71,7 +75,7 @@ export default function Equipment() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
                 <img
                   src={item.image}
-                  alt={item.name}
+                  alt={item.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

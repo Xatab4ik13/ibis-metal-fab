@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Металлообработка с искрами"
+          alt="Металлообработка на станках с ЧПУ — искры при резке металла в цехе ООО АТМ"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for readability */}

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import trumatic from "@/assets/equipment/trumatic-2000r-full.jpg";
@@ -17,6 +18,7 @@ const services = [
     shortDesc: "Гидравлические прессы Trumpf",
     description: "Гибка металла – это технологическая операция, при которой из заготовки плоской формы получают объемное изделие без сварных и иных швов и соединений. Такой вид обработки позволяет получать прочные и надежные детали, отличающиеся не только высокой точностью, но и достойным внешним видом.",
     image: trumpfBend,
+    alt: "Гибка листового металла на гидравлическом прессе Trumpf TrumaBend",
     features: ["Прессы Trumpf TrumaBend", "Без сварных швов", "Высокая точность"],
   },
   {
@@ -25,6 +27,7 @@ const services = [
     shortDesc: "Лазер, плазма, координатная пробивка",
     description: "Все работы производятся на высоком профессиональном уровне в кратчайшие сроки благодаря использованию высокопроизводительных станков. Наше производство оснащено современными высокоточными станками с ЧПУ.",
     image: trumatic,
+    alt: "Координатно-пробивной станок Trumpf Trumatic для раскроя листового металла",
     features: ["Лазерная резка", "Газо-плазменная резка", "Пробивка Trumpf"],
   },
   {
@@ -33,6 +36,7 @@ const services = [
     shortDesc: "Детали любой сложности",
     description: "Предприятие производит токарные и фрезерные работы как по чертежам, так и по образцам требуемой продукции. Мощный станочный парк и высококвалифицированные специалисты позволяют производить детали любой сложности от единичных до серийных партий.",
     image: cncMilling,
+    alt: "Фрезерный станок с ЧПУ — токарно-фрезерные работы на заказ в Москве",
     features: ["По чертежам и образцам", "Любая сложность", "Единичные и серийные партии"],
   },
   {
@@ -41,6 +45,7 @@ const services = [
     shortDesc: "Все виды сварочных работ",
     description: "Сварка — технологический процесс получения неразъёмного соединения. На нашем производстве имеется несколько видов сварки: ручная дуговая, полуавтоматическая проволокой, точечная контактная и сварка аргоном для нержавеющей стали, алюминия и титана.",
     image: perforatedBox,
+    alt: "Сварочные работы — перфорированный корпус после сварки MIG/MAG",
     features: ["Ручная дуговая", "Полуавтоматическая", "Аргонодуговая TIG"],
   },
   {
@@ -49,6 +54,7 @@ const services = [
     shortDesc: "Оборудование GEMMA",
     description: "Порошковая покраска изделий длиной до 3.5 метров на оборудовании фирмы GEMMA. Широкая палитра цветов RAL, равномерное покрытие, высокая стойкость к механическим повреждениям и коррозии.",
     image: cabinetFrame,
+    alt: "Порошковая покраска металлического каркаса — оборудование GEMMA",
     features: ["Изделия до 3.5 м", "Любые цвета RAL", "Оборудование GEMMA"],
   },
 ];
@@ -65,6 +71,9 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         
         <div className="container mx-auto px-4 relative z-10">
+          <div className="mb-8">
+            <Breadcrumbs items={[{ label: "Услуги" }]} />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -117,7 +126,7 @@ export default function Services() {
                       <div className="aspect-[4/3] overflow-hidden rounded-lg">
                         <img
                           src={service.image}
-                          alt={service.title}
+                          alt={service.alt}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
