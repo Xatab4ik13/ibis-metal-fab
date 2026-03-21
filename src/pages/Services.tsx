@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import trumatic from "@/assets/equipment/trumatic-2000r-full.jpg";
