@@ -342,7 +342,12 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
-            {/* Breadcrumb removed */}
+            <div className="mb-6">
+              <Breadcrumbs items={[
+                { label: "Услуги", path: "/services" },
+                { label: service.title }
+              ]} />
+            </div>
             
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-primary" />
