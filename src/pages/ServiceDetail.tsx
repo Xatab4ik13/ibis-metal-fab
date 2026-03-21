@@ -1,8 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import brsPress from "@/assets/equipment/brs-press.jpg";
