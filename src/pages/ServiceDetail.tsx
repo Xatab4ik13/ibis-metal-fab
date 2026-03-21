@@ -276,9 +276,54 @@ export default function ServiceDetail() {
   const currentIndex = serviceOrder.indexOf(id || "");
   const prevService = currentIndex > 0 ? serviceOrder[currentIndex - 1] : null;
   const nextService = currentIndex < serviceOrder.length - 1 ? serviceOrder[currentIndex + 1] : null;
+  const seo = id ? seoData[id] : null;
+  const faqs = id ? faqData[id] : null;
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqSchema = faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : undefined;
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "ООО АТМ",
+      "telephone": "8 (901) 744-94-40",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Балашиха",
+        "addressRegion": "Московская область",
+        "addressCountry": "RU"
+      }
+    },
+    "areaServed": ["Москва", "Московская область"]
+  };
+
+  const combinedSchema = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
 
   return (
     <Layout>
+      {seo && (
+        <SEO
+          title={seo.title}
+          description={seo.description}
+          canonical={`/services/${id}`}
+          schema={combinedSchema}
+        />
+      )}
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden">
         <div className="absolute inset-0">
