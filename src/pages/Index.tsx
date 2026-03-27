@@ -2,6 +2,7 @@ import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import Equipment from "@/components/home/Equipment";
+import BlogPreview from "@/components/home/BlogPreview";
 import CTA from "@/components/home/CTA";
 import SEO from "@/components/SEO";
 
@@ -43,6 +44,7 @@ const Index = () => {
       <Hero />
       <ServicesPreview />
       <Equipment />
+      <BlogPreview />
       <CTA />
     </Layout>
   );
