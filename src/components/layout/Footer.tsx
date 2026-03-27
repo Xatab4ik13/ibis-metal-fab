@@ -10,6 +10,13 @@ const services = [
   { label: "Порошковая покраска", path: "/services/painting" },
 ];
 
+const usefulLinks = [
+  { label: "Галерея работ", path: "/gallery" },
+  { label: "Статьи", path: "/articles" },
+  { label: "Контакты", path: "/contacts" },
+  { label: "Политика конфиденциальности", path: "/privacy" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-card border-t border-border">
