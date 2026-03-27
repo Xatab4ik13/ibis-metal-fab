@@ -1,5 +1,6 @@
 import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import redBoxes from "@/assets/products/red-boxes.jpg";
+import brsPress from "@/assets/equipment/brs-press.jpg";
 
 export interface Article {
   slug: string;
