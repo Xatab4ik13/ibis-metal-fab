@@ -21,13 +21,13 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Info */}
           <div>
             <div className="mb-6">
               <img 
                 src={logoAtm} 
-                alt="ООО АТМ" 
+                alt="ООО АТМ — металлообработка в Москве" 
                 className="h-10 w-auto brightness-0 invert"
               />
             </div>
@@ -48,6 +48,23 @@ export default function Footer() {
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Useful Links */}
+          <div>
+            <h3 className="font-semibold text-foreground mb-6">Полезное</h3>
+            <ul className="space-y-3">
+              {usefulLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
