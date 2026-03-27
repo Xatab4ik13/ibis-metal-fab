@@ -81,7 +81,6 @@ function RenderSection({ section }: { section: ArticleSection }) {
 export default function ArticleDetail() {
   const { slug } = useParams<{ slug: string }>();
   const article = articles.find(a => a.slug === slug);
-  const articleIndex = articles.findIndex(a => a.slug === slug);
 
   if (!article) {
     return (
@@ -173,6 +172,7 @@ export default function ArticleDetail() {
                 src={article.image}
                 alt={article.imageAlt}
                 className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
           </div>

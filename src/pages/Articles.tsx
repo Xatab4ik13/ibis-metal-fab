@@ -74,6 +74,7 @@ export default function Articles() {
                     <img
                       src={article.image}
                       alt={article.imageAlt}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
