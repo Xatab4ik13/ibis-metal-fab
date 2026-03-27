@@ -172,6 +172,7 @@ export default function ArticleDetail() {
                 src={article.image}
                 alt={article.imageAlt}
                 className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
           </div>
