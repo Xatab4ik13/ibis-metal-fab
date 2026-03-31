@@ -78,7 +78,7 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <span className="text-muted-foreground">
-                  Московская область, г. Балашиха<br />мкр Кучино, ул. Южная 17/1
+                  Москва, г. Балашиха<br />мкр Кучино, ул. Южная 17/1
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm">
