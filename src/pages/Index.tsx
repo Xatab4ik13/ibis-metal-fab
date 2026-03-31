@@ -24,7 +24,7 @@ const Index = () => {
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "мкр Кучино, ул. Южная 17/1",
-            "addressLocality": "Балашиха",
+            "addressLocality": "Москва",
             "addressRegion": "Московская область",
             "postalCode": "143981",
             "addressCountry": "RU"
