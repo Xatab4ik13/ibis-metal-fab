@@ -304,7 +304,7 @@ export default function ServiceDetail() {
       "telephone": "8 (901) 744-94-40",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Балашиха",
+        "addressLocality": "Москва",
         "addressRegion": "Московская область",
         "addressCountry": "RU"
       }
