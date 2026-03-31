@@ -101,7 +101,7 @@ export default function Contacts() {
     {
       icon: MapPin,
       label: "Адрес",
-      value: "Московская область, г. Балашиха, мкр Кучино, ул. Южная 17/1",
+      value: "Москва, г. Балашиха, мкр Кучино, ул. Южная 17/1",
       href: null,
     },
     {
