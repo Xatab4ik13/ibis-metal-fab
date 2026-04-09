@@ -2,6 +2,7 @@ import trumpfBend from "@/assets/equipment/trumpf-bend.jpg";
 import redBoxes from "@/assets/products/red-boxes.jpg";
 import brsPress from "@/assets/equipment/brs-press.jpg";
 import ajanCutting from "@/assets/equipment/ajan-cnc-cutting.jpg";
+import cncMillingArticle from "@/assets/equipment/cnc-milling-article.jpg";
 
 export interface Article {
   slug: string;
