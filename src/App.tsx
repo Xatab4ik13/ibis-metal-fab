@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
+import About from "./pages/About";
+import Zastroyshchikam from "./pages/Zastroyshchikam";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +44,8 @@ const App = () => (
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/zastroyshchikam" element={<Zastroyshchikam />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:slug" element={<ArticleDetail />} />
             <Route path="/privacy" element={<Privacy />} />

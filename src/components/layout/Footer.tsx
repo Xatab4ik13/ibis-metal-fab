@@ -11,6 +11,8 @@ const services = [
 ];
 
 const usefulLinks = [
+  { label: "О компании", path: "/about" },
+  { label: "Застройщикам", path: "/zastroyshchikam" },
   { label: "Галерея работ", path: "/gallery" },
   { label: "Статьи", path: "/articles" },
   { label: "Контакты", path: "/contacts" },

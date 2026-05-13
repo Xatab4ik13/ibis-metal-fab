@@ -16,7 +16,9 @@ const services = [
 const navItems = [
   { label: "Главная", path: "/" },
   { label: "Услуги", path: "/services", hasDropdown: true },
+  { label: "Застройщикам", path: "/zastroyshchikam" },
   { label: "Галерея", path: "/gallery" },
+  { label: "О компании", path: "/about" },
   { label: "Статьи", path: "/articles" },
   { label: "Контакты", path: "/contacts" },
 ];
